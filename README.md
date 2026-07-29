@@ -72,8 +72,6 @@ The goal wasn't just to report what's in these columns — it was to combine the
 
 ## Dashboard Build
 
-All charts below are shown at a fixed 650px width for visual consistency, regardless of chart type.
-
 ### Part 1 — Core Analysis
 
 **1. Common Delay Reasons — Breakdown**
