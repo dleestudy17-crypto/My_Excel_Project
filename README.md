@@ -25,8 +25,8 @@ What I did, at a high level:
 
 | File | Description |
 |---|---|
-| 📊 [`Bus_Breakdown_and_Delays_NYC_Project_Final.xlsx`](./Bus_Breakdown_and_Delays_NYC_Project_Final.xlsx) | Part 1 — Core analysis: Common Delay Reasons, How Delay Times Vary, Day of Week, Delay Burden |
-| 🔍 [`Bus_Breakdown_VLOOKUP_Analysis.xlsx`](./Bus_Breakdown_VLOOKUP_Analysis.xlsx) | Part 2 — VLOOKUP-driven tools: interactive Company Lookup panel + Reason Category mapping |
+| 📊  [`Bus_Breakdown_and_Delays_NYC_Project_Final.xlsx`](./Bus_Breakdown_and_Delays_NYC_Project_Final.xlsx) | Part 1 — Core analysis: Common Delay Reasons, How Delay Times Vary, Day of Week, Delay Burden |
+| 🔍  [`Bus_Breakdown_VLOOKUP_Analysis.xlsx`](./Bus_Breakdown_VLOOKUP_Analysis.xlsx) | Part 2 — VLOOKUP-driven tools: interactive Company Lookup panel + Reason Category mapping |
 
 ### Scenario
 
