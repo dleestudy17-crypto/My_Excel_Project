@@ -102,7 +102,7 @@ All charts below are shown at a fixed 650px width for visual consistency, regard
 
 **6. Day of Week**
 
-<img src="images/images_06_day_of_week.png" width="650">
+<img src="images/images_06_day_of_week.png" width="600">
 
 **Insight:** Monday is the worst day (58,813 total incidents), tapering steadily to Friday (52,830) — an 11% decline across the week. The pattern holds for both breakdowns and delays, which points to a systemic Monday effect (possibly weekend maintenance backlogs or traffic patterns) rather than random noise.
 
