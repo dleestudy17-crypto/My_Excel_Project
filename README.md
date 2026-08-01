@@ -76,11 +76,11 @@ The goal wasn't just to report what's in these columns — it was to combine the
 
 **1. Common Delay Reasons — Breakdown**
 
-<img src="images/image_01_common_delays_breakdown.png" width="650">
+<img src="images/image_01_common_delays_breakdown.png" width="660">
 
 **2. Common Delay Reasons — Running Late**
 
-<img src="images/_02image_common_delays_running_late.png" width="650">
+<img src="images/_02image_common_delays_running_late.png" width="660">
 
 **3. Share of Incidents by Reason**
 
@@ -90,11 +90,11 @@ The goal wasn't just to report what's in these columns — it was to combine the
 
 **4. How Delay Times Vary — by Bus Company**
 
-<img src="images/images_04_avg_delay_by_company.png" width="650">
+<img src="images/images_04_avg_delay_by_company.png" width="670">
 
 **5. How Delay Times Vary — by Borough**
 
-<img src="images/image_05_avg_delay_by_borough.png" width="650">
+<img src="images/image_05_avg_delay_by_borough.png" width="670">
 
 **Insight:** Manhattan has the longest average delay time (45.1 minutes) despite not having the highest incident volume — suggesting Manhattan routes face structurally worse traffic conditions per incident, not just more incidents. Delay severity by company varies meaningfully too, which matters for contract renewal decisions: a company with fewer incidents but longer average delays may be a worse actual experience for riders than a high-volume, low-severity company.
 
@@ -106,11 +106,11 @@ The goal wasn't just to report what's in these columns — it was to combine the
 
 **7. Delay Burden — by Borough** *(self-directed metric)*
 
-<img src="images/images_07_delay_burden_borough.png" width="650">
+<img src="images/images_07_delay_burden_borough.png" width="680">
 
 **8. Delay Burden — by Bus Company**
 
-<img src="images/images_08_delay_burden_company.png" width="650">
+<img src="images/images_08_delay_burden_company.png" width="680">
 
 **Insight:** Raw incident counts don't reflect real-world impact — a delay affecting 3 students isn't the same as one affecting 60. Weighting by `Number_Of_Students_On_The_Bus × Delay_Minutes`, Brooklyn imposes the single greatest burden (8.5M student-minutes lost), even though Manhattan has more total incidents — because Manhattan incidents tend to involve fewer riders per bus. This reframes the priority order from "most incidents" to "most actual disruption," which is the metric an agency should really be optimizing against.
 
@@ -146,12 +146,33 @@ A dropdown (Data Validation) lets you select any of the 56 bus companies and ins
 ---
 
 ## Conclusion
+ 
+### What I found
+ 
+**The most common problem isn't the most serious one.** Heavy Traffic is 62.5% of incidents, but only 279 out of 176,475 became real breakdowns. Mechanical Problems are just 8.5% of reports, yet 43% of them strand a bus. If I had stopped at the counts, I would have flagged the wrong priority.
+ 
+**Counting incidents isn't the same as measuring harm.** A delay with 3 students on board isn't the same event as one with 60. Weighting by students affected put Brooklyn on top at 8.5M student minutes lost.
+ 
+**Mondays run 11% worse than Fridays**, for both breakdowns and delays. That's consistent enough to be structural rather than random, but the data doesn't tell me why. Splitting the weekday counts by reason would narrow it down.
+ 
+One caveat: the bus companies report their own incidents and pick the reason code. Traffic costs them nothing to report. A mechanical problem points at their own upkeep, and these are the same companies the city evaluates at contract renewal. I can't prove that shifts the numbers, but anyone acting on them should know it.
+ 
+### What I'd tell the agency
+ 
+1. Treat traffic delays as scheduling, not vehicles. Pad the routes that run chronically late.
+2. Spend maintenance money on mechanical issues. Small in volume, but they're the ones that strand students.
+3. Rank boroughs and companies by student minutes lost, not by incident count.
+4. Check maintenance records against the Monday spike before funding anything.
+5. Dig into "Other" before trusting any of this. It's 18% of incidents, and if it's hiding mechanical failures then point 2 is understated.
+6. Judge companies on impact per incident at renewal. Raw counts just punish the big operators.
+   
+### What I learned
+ 
+I came into this thinking the hard part would be the formulas. It wasn't. The hard part was deciding what to measure.
+ 
+Heavy Traffic looked like the headline at 62.5% of incidents, until I checked how many were real breakdowns and found almost none. The most frequent reason was the least important one. My job wasn't to describe the data, it was to work out which question it could actually answer.
+ 
+That produced the Delay Burden metric, the part I'm proudest of because it didn't exist until I built it. A delay with 3 students aboard isn't the same event as one with 60, so I weighted every incident by the students it affected. It reordered the priorities and put Brooklyn on top.
 
-This project moved from raw, messy incident-level data to a set of formula-driven, decision-ready views — without ever hardcoding a result. Every number on every tab recalculates from the source data, which means the whole workbook stays correct if new incidents get appended later.
-
-A few takeaways I'd highlight to an employer:
-- **Frequency and severity aren't the same story** — Heavy Traffic is the most *common* reason, but Mechanical Problems are proportionally the most likely to cause a full breakdown.
-- **Raw counts can mislead prioritization** — the Delay Burden metric shows that weighting by actual student impact reorders which boroughs and companies deserve the most attention.
-- **A clean single source of truth matters** — consolidating everything into one lean data tab (rather than duplicating the dataset across every analysis tab) cut file size by 89% and made every formula easier to trust and maintain.
-
-If I extended this further, I'd want to bring in year-over-year trend data (if available) to see whether these patterns are improving or worsening over time, and build out a response-time metric (time between `Created_On` and `Occurred_On`) to measure how quickly incidents get logged and addressed.
+Overall, this changed how I approach a dataset. I now start from problems decision makers have to solve, then work backward to the number that suggests solutions. That habit is what I would bring to a team, more than any single formula in this workbook.
+ 
