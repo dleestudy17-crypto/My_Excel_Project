@@ -177,6 +177,7 @@ That produced the Delay Burden metric, the part I'm proudest of because it didn'
 Overall, this changed how I approach a dataset. I now start from problems decision makers have to solve, then work backward to the number that suggests solutions. That habit is what I would bring to a team, more than any single formula in this workbook.
 
 
+
 **Created by DongHwan(Dylan) Lee**
 
 School of Information Studies
