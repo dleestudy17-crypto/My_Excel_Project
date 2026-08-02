@@ -175,4 +175,15 @@ Heavy Traffic looked like the headline at 62.5% of incidents, until I checked ho
 That produced the Delay Burden metric, the part I'm proudest of because it didn't exist until I built it. A delay with 3 students aboard isn't the same event as one with 60, so I weighted every incident by the students it affected. It reordered the priorities and put Brooklyn on top.
 
 Overall, this changed how I approach a dataset. I now start from problems decision makers have to solve, then work backward to the number that suggests solutions. That habit is what I would bring to a team, more than any single formula in this workbook.
+
+
+**Created by DongHwan(Dylan) Lee**
+
+School of Information Studies
+Information Management & Technology, Syracuse University
+[LinkedIn](www.linkedin.com/in/hellodylanlee)
+
+---
+
+*Last updated: August 2026*
  
